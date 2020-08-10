@@ -52,6 +52,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c17772156ef2829aadc587461c7753af20b7e8db1529bc66855add962a3b35d3"
 
 [[package]]
+name = "async-trait"
+version = "0.1.36"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a265e3abeffdce30b2e26b7a11b222fe37c6067404001b434101457d0385eb92"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "atomic-waker"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -192,6 +203,15 @@ name = "dtoa"
 version = "0.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "134951f4028bdadb9b84baf4232681efbf277da25144b9b0ad65df75946c422b"
+
+[[package]]
+name = "erased-serde"
+version = "0.3.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6ca8b296792113e1500fd935ae487be6e00ce318952a6880555554824d6ebf38"
+dependencies = [
+ "serde",
+]
 
 [[package]]
 name = "event-listener"
@@ -557,6 +577,8 @@ name = "nephila"
 version = "0.1.0"
 dependencies = [
  "async-std",
+ "async-trait",
+ "erased-serde",
  "futures 0.3.5",
  "propane",
  "surf",
@@ -671,7 +693,7 @@ dependencies = [
 [[package]]
 name = "propane"
 version = "0.1.0"
-source = "git+https://github.com/withoutboats/propane?branch=async-generators#8a196fc9223f61202751c33c88c38734db88d85f"
+source = "git+https://github.com/withoutboats/propane#3cd45b6b3df2f464214cc3ecdb1c9d678386ecc9"
 dependencies = [
  "futures-core",
  "propane-macros",
@@ -680,7 +702,7 @@ dependencies = [
 [[package]]
 name = "propane-macros"
 version = "0.1.0"
-source = "git+https://github.com/withoutboats/propane?branch=async-generators#8a196fc9223f61202751c33c88c38734db88d85f"
+source = "git+https://github.com/withoutboats/propane#3cd45b6b3df2f464214cc3ecdb1c9d678386ecc9"
 dependencies = [
  "proc-macro2",
  "quote",
